@@ -1,0 +1,23 @@
+default: &default
+  adapter: postgresql
+  encoding: unicode
+  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+  host: <%= Rails.application.secrets.fetch(:database_host) %>
+  port: <%= Rails.application.secrets.fetch(:database_port) %>
+  database: <%= Rails.application.secrets.fetch(:database_name) %>
+  username: <%= Rails.application.secrets.fetch(:database_username) %>
+  password: <%= Rails.application.secrets.fetch(:database_password) %>
+
+development:
+  <<: *default
+  database: netflix_jsonapi_example_development
+
+test:
+  <<: *default
+  database: netflix_jsonapi_example_test
+
+staging:
+  <<: *default
+
+production:
+  <<: *default

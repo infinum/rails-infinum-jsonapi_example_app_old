@@ -1,0 +1,12 @@
+database_host: localhost
+database_username: postgres
+database_password: ""
+database_name: ""
+database_port: "5432"
+bugsnag_api_key: ADD_IT_HERE
+
+development:
+  secret_key_base: 3cea8c156047543b1e8a4e89d9393b6c00fc7881d0a80121a9c34c33de7c0342a591270295c3d00865d8fd5e6d582f4643676e6ec1a4c01cd45186afc0318dd7
+
+test:
+  secret_key_base: be23202e183aadfcc8a8c7ee49d358ce47baf1368dfff70175be56e08a08191a6e33a76d9800265d33f89eef4ec9dc917077a00c0aebb1ad06c726401a6aa5c9
