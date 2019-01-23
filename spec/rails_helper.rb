@@ -67,28 +67,14 @@ RSpec.configure do |config|
   # arbitrary gems may also be filtered via:
   # config.filter_gems_from_backtrace("gem name")
   config.include JsonApiHelpers
-  config.include MockHelpers
-  config.include SendbirdHelpers
   config.include RequestSpecHelpers, type: :request
-  config.include XmlHelpers
-  config.include UploadFileHelper
   config.include ActionDispatch::TestProcess
   config.include FactoryBot::Syntax::Methods
-  config.before do
-    Rails.cache.clear
-    raise ArgumentError, 'Please set an active trade fair' unless defined? tenant
-
-    ActsAsTenant.current_tenant = tenant
-  end
 
   config.after(:each, :dox) do |example|
     example.metadata[:request] = request
     example.metadata[:response] = response
   end
-end
-
-def tenant
-  @tenant ||= create(:fair)
 end
 
 Dox.configure do |config|

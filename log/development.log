@@ -1,1 +1,146 @@
 No valid API key has been set, notifications will not be sent
+No valid API key has been set, notifications will not be sent
+No valid API key has been set, notifications will not be sent
+No valid API key has been set, notifications will not be sent
+  [1m[35m (453.4ms)[0m  [1m[35mCREATE DATABASE "netflix_jsonapi_example_development" ENCODING = 'unicode'[0m
+  ↳ /Users/cilim/.rbenv/versions/2.5.1/bin/rake:23
+  [1m[35m (384.1ms)[0m  [1m[35mCREATE DATABASE "netflix_jsonapi_example_test" ENCODING = 'unicode'[0m
+  ↳ /Users/cilim/.rbenv/versions/2.5.1/bin/rake:23
+No valid API key has been set, notifications will not be sent
+  [1m[35m (34.9ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  ↳ /Users/cilim/.rbenv/versions/2.5.1/bin/rake:23
+  [1m[35m (21.2ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ /Users/cilim/.rbenv/versions/2.5.1/bin/rake:23
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT pg_try_advisory_lock(6182209596318507150)[0m
+  ↳ /Users/cilim/.rbenv/versions/2.5.1/bin/rake:23
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/cilim/.rbenv/versions/2.5.1/bin/rake:23
+Migrating to CreateMovies (20190123081525)
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ /Users/cilim/.rbenv/versions/2.5.1/bin/rake:23
+  [1m[35m (31.9ms)[0m  [1m[35mCREATE TABLE "movies" ("id" bigserial primary key, "title" character varying, "released_at" date, "runtime" integer, "content_rating" character varying, "storyline" text, "budget" integer, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/migrate/20190123081525_create_movies.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (2.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20190123081525"]]
+  ↳ /Users/cilim/.rbenv/versions/2.5.1/bin/rake:23
+  [1m[35m (1.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ /Users/cilim/.rbenv/versions/2.5.1/bin/rake:23
+  [1m[36mActiveRecord::InternalMetadata Load (0.7ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ /Users/cilim/.rbenv/versions/2.5.1/bin/rake:23
+  [1m[35m (0.6ms)[0m  [1m[35mBEGIN[0m
+  ↳ /Users/cilim/.rbenv/versions/2.5.1/bin/rake:23
+  [1m[36mActiveRecord::InternalMetadata Create (0.9ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", "2019-01-23 08:28:34.289496"], ["updated_at", "2019-01-23 08:28:34.289496"]]
+  ↳ /Users/cilim/.rbenv/versions/2.5.1/bin/rake:23
+  [1m[35m (5.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ /Users/cilim/.rbenv/versions/2.5.1/bin/rake:23
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT pg_advisory_unlock(6182209596318507150)[0m
+  ↳ /Users/cilim/.rbenv/versions/2.5.1/bin/rake:23
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/cilim/.rbenv/versions/2.5.1/bin/rake:23
+No valid API key has been set, notifications will not be sent
+Not notifying due to an invalid api_key
+Not notifying due to an invalid api_key
+No valid API key has been set, notifications will not be sent
+Not notifying due to an invalid api_key
+Not notifying due to an invalid api_key
+No valid API key has been set, notifications will not be sent
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_try_advisory_lock(6182209596318507150)[0m
+  ↳ /Users/cilim/.rbenv/versions/2.5.1/bin/rake:23
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/cilim/.rbenv/versions/2.5.1/bin/rake:23
+  [1m[36mActiveRecord::InternalMetadata Load (0.6ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ /Users/cilim/.rbenv/versions/2.5.1/bin/rake:23
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ /Users/cilim/.rbenv/versions/2.5.1/bin/rake:23
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ /Users/cilim/.rbenv/versions/2.5.1/bin/rake:23
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT pg_advisory_unlock(6182209596318507150)[0m
+  ↳ /Users/cilim/.rbenv/versions/2.5.1/bin/rake:23
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/cilim/.rbenv/versions/2.5.1/bin/rake:23
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/cilim/.rbenv/versions/2.5.1/bin/rake:23
+No valid API key has been set, notifications will not be sent
+No valid API key has been set, notifications will not be sent
+Not notifying due to an invalid api_key
+Not notifying due to an invalid api_key
+No valid API key has been set, notifications will not be sent
+Started GET "/api/v1/movies" for 127.0.0.1 at 2019-01-23 10:05:02 +0100
+  [1m[35m (7.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/cilim/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+Not notifying due to an invalid api_key
+
+NameError - uninitialized constant JsonApiResponders::Pagination:
+  app/controllers/api/v1/api_controller.rb:5:in `<class:ApiController>'
+  app/controllers/api/v1/api_controller.rb:3:in `<module:V1>'
+  app/controllers/api/v1/api_controller.rb:2:in `<module:Api>'
+  app/controllers/api/v1/api_controller.rb:1:in `<top (required)>'
+  app/controllers/api/v1/movies_controller.rb:3:in `<module:V1>'
+  app/controllers/api/v1/movies_controller.rb:2:in `<module:Api>'
+  app/controllers/api/v1/movies_controller.rb:1:in `<top (required)>'
+
+Not delivering sessions due to an invalid api_key
+No valid API key has been set, notifications will not be sent
+Started GET "/api/v1/movies" for 127.0.0.1 at 2019-01-23 10:06:20 +0100
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/cilim/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+Processing by Api::V1::MoviesController#index as */*
+Completed 500 Internal Server Error in 4654ms (ActiveRecord: 0.0ms)
+
+
+Not notifying due to an invalid api_key
+
+JsonApiDeserializer::MediaTypeError - translation missing: en.media_type_error:
+  app/deserializers/json_api_deserializer.rb:16:in `valid?'
+  app/controllers/concerns/json_api_deserialization.rb:10:in `valid_jsonapi?'
+
+Not delivering sessions due to an invalid api_key
+Started GET "/api/v1/movies" for 127.0.0.1 at 2019-01-23 10:07:38 +0100
+Processing by Api::V1::MoviesController#index as */*
+Completed 500 Internal Server Error in 18ms (ActiveRecord: 0.0ms)
+
+
+Not notifying due to an invalid api_key
+
+JsonApiDeserializer::MediaTypeError - Invalid request media type. Are you using JSONAPI standard?:
+  app/deserializers/json_api_deserializer.rb:16:in `valid?'
+  app/controllers/concerns/json_api_deserialization.rb:9:in `valid_jsonapi?'
+
+No valid API key has been set, notifications will not be sent
+No valid API key has been set, notifications will not be sent
+No valid API key has been set, notifications will not be sent
+Not notifying due to an invalid api_key
+Not notifying due to an invalid api_key
+No valid API key has been set, notifications will not be sent
+Not notifying due to an invalid api_key
+Not notifying due to an invalid api_key
+No valid API key has been set, notifications will not be sent
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT pg_try_advisory_lock(6182209596318507150)[0m
+  ↳ /Users/cilim/.rbenv/versions/2.5.1/bin/rake:23
+  [1m[35m (7.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/cilim/.rbenv/versions/2.5.1/bin/rake:23
+Migrating to DeviseCreateUsers (20190123101527)
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ /Users/cilim/.rbenv/versions/2.5.1/bin/rake:23
+  [1m[35m (28.8ms)[0m  [1m[35mCREATE TABLE "users" ("id" bigserial primary key, "email" character varying DEFAULT '' NOT NULL, "encrypted_password" character varying DEFAULT '' NOT NULL, "jti" character varying NOT NULL, "first_name" character varying, "last_name" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/migrate/20190123101527_devise_create_users.rb:5
+  [1m[35m (1.5ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_users_on_email" ON "users"  ("email")[0m
+  ↳ db/migrate/20190123101527_devise_create_users.rb:42
+  [1m[35m (1.0ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_users_on_jti" ON "users"  ("jti")[0m
+  ↳ db/migrate/20190123101527_devise_create_users.rb:43
+  [1m[36mActiveRecord::SchemaMigration Create (0.7ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20190123101527"]]
+  ↳ /Users/cilim/.rbenv/versions/2.5.1/bin/rake:23
+  [1m[35m (1.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ /Users/cilim/.rbenv/versions/2.5.1/bin/rake:23
+  [1m[36mActiveRecord::InternalMetadata Load (0.6ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ /Users/cilim/.rbenv/versions/2.5.1/bin/rake:23
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ /Users/cilim/.rbenv/versions/2.5.1/bin/rake:23
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ /Users/cilim/.rbenv/versions/2.5.1/bin/rake:23
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_advisory_unlock(6182209596318507150)[0m
+  ↳ /Users/cilim/.rbenv/versions/2.5.1/bin/rake:23
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/cilim/.rbenv/versions/2.5.1/bin/rake:23
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/cilim/.rbenv/versions/2.5.1/bin/rake:23
+No valid API key has been set, notifications will not be sent

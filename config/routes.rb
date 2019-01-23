@@ -1,3 +1,15 @@
 Rails.application.routes.draw do
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+  devise_for :users, only: [:sessions]
+
+  namespace :api do
+    namespace :v1 do
+      devise_scope :user do
+        scope module: :auth do
+          resource :sessions, only: [:create, :destroy]
+        end
+      end
+
+      resources :movies, only: [:index]
+    end
+  end
 end

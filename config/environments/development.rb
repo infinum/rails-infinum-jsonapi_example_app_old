@@ -1,5 +1,6 @@
 Rails.application.configure do
   config.action_mailer.delivery_method = :letter_opener
+  config.action_mailer.default_url_options = { host: "http://localhost:3000" }
 
   config.after_initialize do
     Bullet.enable = true
@@ -64,3 +65,5 @@ Rails.application.configure do
 
   config.debug_exception_response_format = :api
 end
+
+Rails.application.routes.default_url_options[:host] = "http://localhost:3000"

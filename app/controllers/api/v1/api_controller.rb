@@ -1,11 +1,11 @@
 module Api
   module V1
     class ApiController < ActionController::API
-      include JsonApiResponders
-      include JsonApiResponders::Pagination
       include JsonApiDeserialization
-      include ResponseAdapter
-      include EagerLoadRelationships
+      include Authentication
+      include JsonApiResponders
+      include CustomJsonApiResponders
+      include ErrorHandling
 
       before_action :skip_session
       before_action :valid_jsonapi?

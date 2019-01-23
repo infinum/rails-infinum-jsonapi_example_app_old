@@ -28,6 +28,7 @@ module NetflixJsonapiExample
     Rails.application.config.i18n.default_locale = :en
 
     config.api_only = true
+    config.autoload_paths += Dir["#{Rails.application.root}/lib/**/"]
     config.eager_load_paths << Rails.root.join('lib')
     config.enable_dependency_loading = true
 

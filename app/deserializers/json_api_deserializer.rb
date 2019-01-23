@@ -5,10 +5,6 @@ class JsonApiDeserializer
     @request = request
   end
 
-  def params
-    deserialized_params if valid?
-  end
-
   def valid?
     if content_type_header&.start_with?(MEDIA_TYPE) && accept_header&.start_with?(MEDIA_TYPE)
       true
@@ -18,20 +14,6 @@ class JsonApiDeserializer
   end
 
   private
-
-  def deserialized_params
-    ActionController::Parameters.new(deserialize(JSON.parse(request_params)))
-  end
-
-  def deserialize(body)
-    JSONAPI::Deserializable::Resource.call(body)
-  rescue JSONAPI::Parser::InvalidDocument => error
-    raise Networking::JsonApiError, error
-  end
-
-  def request_params
-    request.body.read
-  end
 
   def accept_header
     request.headers['accept']

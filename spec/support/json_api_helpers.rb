@@ -1,0 +1,34 @@
+module JsonApiHelpers
+  def json_response
+    JSON.parse(response.body)
+  end
+
+  def response_array
+    json_response['data']
+  end
+
+  def response_meta
+    json_response['meta']
+  end
+
+  def json_api_params(params)
+    {}.tap do |body|
+      body[:data] = {}
+      body[:data][:type] = params[:type]
+      body[:data][:id] = params[:id]
+      body[:data][:attributes] = params.except(:type, :id)
+    end.compact.to_json
+  end
+
+  def default_headers
+    {
+      'content-type' => 'application/vnd.api+json',
+      'accept' => 'application/vnd.api+json'
+    }
+  end
+
+  def authenticated_headers(user, opts = {})
+    token = JWTSerializer.encode(jti: user.jti)
+    default_headers.merge(opts).merge('authorization' => "Bearer #{token}")
+  end
+end
