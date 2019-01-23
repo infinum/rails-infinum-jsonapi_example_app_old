@@ -8,7 +8,6 @@ require "active_record/railtie"
 require "action_controller/railtie"
 require "action_mailer/railtie"
 require "action_view/railtie"
-require "action_cable/engine"
 require "sprockets/railtie"
 # require "rails/test_unit/railtie"
 
@@ -24,6 +23,13 @@ module NetflixJsonapiExample
     # Settings in config/environments/* take precedence over those specified here.
     # Application configuration should go into files in config/initializers
     # -- all .rb files in that directory are automatically loaded.
+
+    Rails.application.config.i18n.available_locales = [:en]
+    Rails.application.config.i18n.default_locale = :en
+
+    config.api_only = true
+    config.eager_load_paths << Rails.root.join('lib')
+    config.enable_dependency_loading = true
 
     # Don't generate system test files.
     config.generators.system_tests = nil
