@@ -15,6 +15,14 @@ module Api
       def skip_session
         request.session_options[:skip] = true
       end
+
+      def deserialized_resource(name)
+        data = params['data'].to_unsafe_hash
+
+        if data['type'].singularize == name.to_s
+          ActionController::Parameters.new({ id: data['id'] }.merge(data['attributes']))
+        end
+      end
     end
   end
 end

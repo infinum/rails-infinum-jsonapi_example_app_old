@@ -125,17 +125,6 @@ GEM
     json-schema (2.8.1)
       addressable (>= 2.4)
     json_api_responders (2.5.0)
-    jsonapi-deserializable (0.2.0)
-    jsonapi-parser (0.1.1)
-    jsonapi-rails (0.3.1)
-      jsonapi-parser (~> 0.1.0)
-      jsonapi-rb (~> 0.5.0)
-    jsonapi-rb (0.5.0)
-      jsonapi-deserializable (~> 0.2.0)
-      jsonapi-serializable (~> 0.3.0)
-    jsonapi-renderer (0.2.0)
-    jsonapi-serializable (0.3.0)
-      jsonapi-renderer (~> 0.2.0)
     jwt (2.1.0)
     kaminari (1.1.1)
       activesupport (>= 4.1.0)
@@ -394,7 +383,6 @@ DEPENDENCIES
   image_processing
   json-schema
   json_api_responders
-  jsonapi-rails
   jwt
   kaminari
   letter_opener

@@ -2,7 +2,6 @@ module Api
   module V1
     module Auth
       class SessionsController < ApiController
-        deserializable_resource :session, only: [:create]
         before_action :authenticate_api_user!, only: [:destroy]
 
         def create
@@ -28,7 +27,7 @@ module Api
         end
 
         def session_params
-          params.require(:session).permit(:email, :password)
+          deserialized_resource(:session).permit(:email, :password)
         end
 
         def query_class
