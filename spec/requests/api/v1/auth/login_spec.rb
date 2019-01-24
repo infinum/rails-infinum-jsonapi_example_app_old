@@ -15,9 +15,9 @@ describe 'Login' do
     include Docs::Api::V1::Sessions::Create
     let(:password) { '123456' }
 
-    it 'returns 200 status' do
+    it 'returns 201 status' do
       login
-      expect(response).to have_http_status(:ok)
+      expect(response).to have_http_status(:created)
     end
 
     it 'returns the authorization header when login is valid', :dox do
