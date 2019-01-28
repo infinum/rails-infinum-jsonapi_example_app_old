@@ -20,7 +20,20 @@ module Api
         data = params['data'].to_unsafe_hash
 
         if data['type'].singularize == name.to_s
-          ActionController::Parameters.new({ id: data['id'] }.merge(data['attributes']))
+
+          relationships = data['relationships']&.each_with_object({}) do |(relationship, value), result|
+            if relationship.singularize == relationship
+              result["#{relationship}_id"] = value['id']
+            else
+              result["#{relationship.singularize}_ids"] = value['data'].map { |rel| rel['id'] }
+            end
+          end
+
+          ActionController::Parameters.new(
+            { id: data['id'] }
+              .merge(data['attributes'])
+              .merge(relationships || {})
+          )
         end
       end
     end

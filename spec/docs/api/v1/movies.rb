@@ -14,6 +14,10 @@ module Docs
         document :index do
           action 'List movies'
         end
+
+        document :create do
+          action 'Create movies'
+        end
       end
     end
   end

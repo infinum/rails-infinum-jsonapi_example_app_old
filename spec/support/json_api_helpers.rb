@@ -12,12 +12,14 @@ module JsonApiHelpers
   end
 
   def json_api_params(params)
-    {}.tap do |body|
-      body[:data] = {}
-      body[:data][:type] = params[:type]
-      body[:data][:id] = params[:id]
-      body[:data][:attributes] = params.except(:type, :id)
-    end.compact.to_json
+    {
+      data: {
+        id: params[:id],
+        type: params[:type],
+        attributes: params.except(:type, :id, :relationships),
+        relationships: params[:relationships]
+      }.compact
+    }.compact.to_json
   end
 
   def default_headers

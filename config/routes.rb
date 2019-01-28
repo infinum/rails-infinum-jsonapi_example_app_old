@@ -9,7 +9,7 @@ Rails.application.routes.draw do
         end
       end
 
-      resources :movies, only: [:index]
+      resources :movies, only: [:index, :create]
     end
   end
 end
