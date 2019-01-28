@@ -1,5 +1,6 @@
 FactoryBot.define do
   factory :movie do
+    director
     title { 'The Terminator' }
     released_at { Date.parse('26.10.1984.') }
     runtime { 107 }

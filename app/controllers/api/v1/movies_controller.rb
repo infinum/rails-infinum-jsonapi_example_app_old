@@ -20,7 +20,8 @@ module Api
 
       def movie_params
         deserialized_resource(:movie).permit(
-          :title, :released_at, :runtime, :content_rating, :storyline, :budget, genre_ids: []
+          :title, :released_at, :runtime, :content_rating,
+          :storyline, :budget, :director_id, genre_ids: []
         )
       end
     end

@@ -6,10 +6,16 @@ describe 'Create movie' do
   context 'when params are valid' do
     include Docs::Api::V1::Movies::Create
     let(:genre) { create(:genre) }
+    let(:director) { create(:director) }
     let(:movie_attributes) do
       attributes_for(:movie)
         .merge(type: :movies)
-        .merge(relationships: { genres: { data: [{ id: genre.id, type: :genres }] } })
+        .merge(
+          relationships: {
+            genres: { data: [{ id: genre.id, type: :genres }] },
+            director: { data: { id: director.id, type: :directors } }
+          }
+        )
     end
 
     it 'returns 201 status', :dox do

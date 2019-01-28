@@ -23,7 +23,7 @@ module Api
 
           relationships = data['relationships']&.each_with_object({}) do |(relationship, value), result|
             if relationship.singularize == relationship
-              result["#{relationship}_id"] = value['id']
+              result["#{relationship}_id"] = value['data']['id']
             else
               result["#{relationship.singularize}_ids"] = value['data'].map { |rel| rel['id'] }
             end

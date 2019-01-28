@@ -6,5 +6,6 @@ class MovieSerializer < BaseSerializer
     object.content_rating.to_s
   end
 
-  has_many :genres
+  belongs_to :director, record_type: :directors
+  has_many :genres, record_type: :genres
 end

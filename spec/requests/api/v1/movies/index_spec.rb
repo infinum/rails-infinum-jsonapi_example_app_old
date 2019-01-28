@@ -43,7 +43,7 @@ describe 'List movies' do
     context 'with relationship inclusion' do
       include Docs::Api::V1::Movies::Index
       let(:movie) { create(:movie) }
-      let(:params) { { include: 'genres' } }
+      let(:params) { { include: 'genres,director' } }
 
       before do
         movie.genres << create(:genre)
@@ -51,7 +51,9 @@ describe 'List movies' do
 
       it 'returns movies with included relationships', :dox do
         get_movies
-        expect(json_response['included'].map { |i| i['type'] }).to eq ['genres']
+        expect(
+          json_response['included'].map { |i| i['type'] }.uniq
+        ).to match_array(['genres', 'directors'])
       end
     end
 
