@@ -18,7 +18,7 @@ module ErrorHandling
       respond_with_error(404, 'Record not found')
     end
 
-    rescue_from JsonApiDeserializer::MediaTypeError do |error|
+    rescue_from JsonApi::Request::MediaTypeError do |error|
       respond_with_error 406, error.message
     end
   end
