@@ -4,8 +4,9 @@ module CustomJsonApiResponders
   def render_jsonapi(resource, options = {})
     response_builder = ResponseBuilder.new(resource, params)
     options[:serializer] ||= default_serializer
+    response_options = options.merge(response_builder.jsonapi_options)
 
-    respond_with(resource, options.merge(response_builder.jsonapi_options))
+    respond_with(resource, response_options)
   end
 
   def default_serializer

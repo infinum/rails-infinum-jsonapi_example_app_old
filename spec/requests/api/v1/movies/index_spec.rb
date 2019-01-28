@@ -40,25 +40,20 @@ describe 'List movies' do
       end
     end
 
-    # context 'with relationship inclusion' do
-    #   include Docs::Api::V1::Movies::Index
-    #   let(:exhibitor) { create(:exhibitor) }
-    #
-    #   subject(:get_movies) do
-    #     exhibitor.brands << create(:brand)
-    #     exhibitor.booths << create(:booth)
-    #     create(:brand)
-    #     get 'api/v1/movies',
-    #         params: { include: 'booths,fair.brands' },
-    #         headers: authenticated_headers(user)
-    #   end
-    #
-    #   it 'returns movies with included relationships', :dox do
-    #     get_movies
-    #     expect(json_response['included'].map { |i| i['type'] })
-    #       .to eq ['fairs', 'booths', 'brands', 'brands']
-    #   end
-    # end
+    context 'with relationship inclusion' do
+      include Docs::Api::V1::Movies::Index
+      let(:movie) { create(:movie) }
+      let(:params) { { include: 'genres' } }
+
+      before do
+        movie.genres << create(:genre)
+      end
+
+      it 'returns movies with included relationships', :dox do
+        get_movies
+        expect(json_response['included'].map { |i| i['type'] }).to eq ['genres']
+      end
+    end
 
     context 'with fields inclusion' do
       include Docs::Api::V1::Movies::Index

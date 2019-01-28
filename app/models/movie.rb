@@ -16,5 +16,8 @@
 class Movie < ApplicationRecord
   enumeration :content_rating
 
+  has_many :movie_genres, class_name: 'MovieGenre', dependent: :destroy
+  has_many :genres, through: :movie_genres
+
   validates :title, presence: true
 end

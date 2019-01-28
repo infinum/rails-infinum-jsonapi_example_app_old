@@ -27,3 +27,4 @@ config/application*.yml
 public/api/*
 node_modules
 materials/
+log/*.log

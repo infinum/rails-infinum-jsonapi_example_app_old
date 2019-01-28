@@ -10,7 +10,8 @@ class ResponseBuilder
     {
       meta: meta,
       links: links,
-      fields: fields
+      fields: fields,
+      include: include
     }.compact
   end
 
@@ -38,7 +39,7 @@ class ResponseBuilder
   end
 
   def include
-    params[:include]
+    params[:include]&.split(',')
   end
 
   def fields

@@ -5,4 +5,6 @@ class MovieSerializer < BaseSerializer
   attribute :content_rating do |object|
     object.content_rating.to_s
   end
+
+  has_many :genres
 end
