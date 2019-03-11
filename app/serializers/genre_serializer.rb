@@ -1,4 +1,5 @@
 class GenreSerializer < BaseSerializer
   set_type :genres
-  attributes :name
+
+  attribute :name
 end
