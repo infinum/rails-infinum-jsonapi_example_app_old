@@ -6,6 +6,9 @@ module Api
       include JsonApiResponders
       include CustomJsonApiResponders
       include ErrorHandling
+      include Pundit
+
+      rescue_from Pundit::NotAuthorizedError, with: :user_not_authorized
 
       before_action :skip_session
       before_action :valid_jsonapi?
@@ -14,6 +17,12 @@ module Api
 
       def skip_session
         request.session_options[:skip] = true
+      end
+
+      def user_not_authorized(exception)
+        policy_name = exception.policy.class.to_s.underscore
+        message = I18n.t("#{policy_name}.#{exception.query}", scope: 'pundit', default: :default)
+        respond_with_error(403, message)
       end
     end
   end

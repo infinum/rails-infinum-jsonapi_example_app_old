@@ -1,7 +1,8 @@
 describe 'Create movie' do
   include Docs::Api::V1::Movies::Api
   let(:params) { json_api_params(movie_attributes) }
-  let(:create_movie) { post 'api/v1/movies', params: params, headers: default_headers }
+  let(:user) { create(:admin) }
+  let(:create_movie) { post 'api/v1/movies', params: params, headers: authenticated_headers(user) }
 
   context 'when params are valid' do
     include Docs::Api::V1::Movies::Create
@@ -21,6 +22,15 @@ describe 'Create movie' do
     it 'returns 201 status', :dox do
       create_movie
       expect(response).to have_http_status(:created)
+    end
+
+    context 'when user is not admin' do
+      let(:user) { create(:user) }
+
+      it 'returns 403 status', :dox do
+        create_movie
+        expect(response).to have_http_status(:forbidden)
+      end
     end
   end
 

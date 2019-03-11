@@ -9,7 +9,11 @@ Rails.application.routes.draw do
         end
       end
 
-      resources :movies, only: [:index, :create]
+      resources :movies, only: [:index]
+
+      namespace :restricted, path: '' do
+        resources :movies, only: [:create]
+      end
     end
   end
 end

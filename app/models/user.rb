@@ -10,10 +10,13 @@
 #  last_name          :string
 #  created_at         :datetime         not null
 #  updated_at         :datetime         not null
+#  role               :string
 #
 
 class User < ApplicationRecord
   devise :database_authenticatable
+
+  enumeration :role
 
   validates :email, presence: true, uniqueness: true
   validates :jti, presence: true, uniqueness: true
