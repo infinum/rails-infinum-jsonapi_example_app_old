@@ -12,8 +12,8 @@ describe 'Logout' do
       expect(response).to have_http_status(:no_content)
     end
 
-    it 'changes users jti after logout', :dox do
-      expect { logout_user }.to change { user.reload.jti }
+    it 'changes users jti_claim after logout', :dox do
+      expect { logout_user }.to change { user.reload.jti_claims.size }
     end
   end
 

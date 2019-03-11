@@ -13,7 +13,7 @@ module Devise
       end
 
       def user
-        @user ||= User.find_by! jti: claims['jti']
+        @user ||= JtiClaim.find_by!(value: claims['jti']).user
       rescue ActiveRecord::RecordNotFound
         Bugsnag.notify(info: 'Failed to find user with JWT token')
         raise NetflixJsonapiExample::RecordNotFoundError

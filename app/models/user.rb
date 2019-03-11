@@ -16,8 +16,9 @@
 class User < ApplicationRecord
   devise :database_authenticatable
 
+  has_many :jti_claims, dependent: :destroy
+
   enumeration :role
 
   validates :email, presence: true, uniqueness: true
-  validates :jti, presence: true, uniqueness: true
 end

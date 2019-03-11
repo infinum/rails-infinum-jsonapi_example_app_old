@@ -18,7 +18,7 @@ class SessionForm < ActiveType::Object
   end
 
   def jwt
-    JWTSerializer.encode(jti: user.jti)
+    JWTSerializer.encode(jti: jti_claim.value)
   end
 
   private
@@ -27,5 +27,9 @@ class SessionForm < ActiveType::Object
     return if user.valid_password?(password)
 
     errors.add(:base, "Password doesn't match your e-mail")
+  end
+
+  def jti_claim
+    user.jti_claims.create(value: SecureRandom.uuid)
   end
 end

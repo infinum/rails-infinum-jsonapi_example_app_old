@@ -30,7 +30,7 @@ module JsonApiHelpers
   end
 
   def authenticated_headers(user, opts = {})
-    token = JWTSerializer.encode(jti: user.jti)
+    token = JWTSerializer.encode(jti: user.jti_claims.first.value)
     default_headers.merge(opts).merge('authorization' => "Bearer #{token}")
   end
 end

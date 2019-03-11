@@ -11,7 +11,7 @@ module Api
         end
 
         def destroy
-          current_user.update(jti: SecureRandom.uuid)
+          current_user.jti_claims.find_by(value: jti_claim)&.destroy
 
           head :no_content
         end
@@ -28,6 +28,10 @@ module Api
 
         def session_params
           deserialized_resource(:session).permit(:email, :password)
+        end
+
+        def jti_claim
+          JWTSerializer.decode(request.headers['authorization'].split(' ').last)['jti']
         end
 
         def query_class
