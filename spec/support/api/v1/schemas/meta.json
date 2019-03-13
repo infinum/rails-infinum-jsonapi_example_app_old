@@ -1,0 +1,10 @@
+{
+  "type": "object",
+  "properties": {
+    "total_pages": { "type": "integer" },
+    "total_count": { "type": "integer" },
+    "max_page_size": { "type": "integer" },
+    "current_page": { "type": "integer" },
+    "offset_value": { "type": "integer" }
+  }
+}

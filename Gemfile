@@ -55,7 +55,8 @@ end
 group :test do
   gem 'fivemat'
   gem 'json-schema'
-  gem 'shoulda-matchers', '~> 4.0.0.rc1'
+  gem 'json_matchers', '~> 0.7.2'
+  gem 'shoulda-matchers'
   gem 'timecop'
   gem 'vcr'
   gem 'webmock'

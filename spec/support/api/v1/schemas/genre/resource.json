@@ -1,0 +1,14 @@
+{
+  "type": "object",
+  "properties": {
+    "type": { "type": "string" },
+    "id": { "type": "string" },
+    "attributes": { "$ref": "attributes.json" }
+  },
+  "required": [
+    "type",
+    "id",
+    "attributes",
+    "relationships"
+  ]
+}

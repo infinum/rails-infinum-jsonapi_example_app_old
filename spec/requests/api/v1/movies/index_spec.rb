@@ -22,6 +22,11 @@ describe 'List movies' do
       expect(response_array.size).to eq 3
     end
 
+    it 'matches expected response schema' do
+      get_movies
+      expect(response).to match_response_schema('movie/collection')
+    end
+
     context 'with ordering' do
       include Docs::Api::V1::Movies::Index
       let(:star_wars_1) { create(:movie, title: 'Star Wars 1') }

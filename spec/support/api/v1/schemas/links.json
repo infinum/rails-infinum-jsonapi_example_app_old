@@ -1,0 +1,10 @@
+{
+  "type": "object",
+  "properties": {
+    "self": { "type": "string" },
+    "first": { "type": "string" },
+    "last": { "type": "string" },
+    "next": { "type": ["string", null] },
+    "prev": { "type": ["string", null] }
+  }
+}

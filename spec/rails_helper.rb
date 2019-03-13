@@ -6,6 +6,7 @@ require File.expand_path('../config/environment', __dir__)
 abort('The Rails environment is running in production mode!') if Rails.env.production?
 require 'rspec/rails'
 require 'dox'
+require 'json_matchers/rspec'
 require 'factory_bot'
 require 'webmock/rspec'
 WebMock.disable_net_connect!(allow_localhost: true)
@@ -76,6 +77,8 @@ RSpec.configure do |config|
     example.metadata[:response] = response
   end
 end
+
+JsonMatchers.schema_root = 'spec/support/api/v1/schemas'
 
 Dox.configure do |config|
   config.header_file_path = Rails.root.join(

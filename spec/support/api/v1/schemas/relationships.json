@@ -1,0 +1,12 @@
+{
+  "type": "object",
+  "properties": {
+    "data": {
+      "type": ["object", "array", "null"],
+      "properties": {
+        "id": { "type": "string" },
+        "type": { "type": "string" }
+      }
+    }
+  }
+}

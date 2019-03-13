@@ -1,0 +1,10 @@
+{
+  "type": "object",
+  "properties": {
+    "data": { "$ref": "resource.json" },
+    "jsonapi": { "$ref": "../jsonapi.json" }
+  },
+  "required": [
+    "data"
+  ]
+}

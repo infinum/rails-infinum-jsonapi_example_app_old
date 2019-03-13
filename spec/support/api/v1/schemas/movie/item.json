@@ -1,0 +1,19 @@
+{
+  "type": "object",
+  "properties": {
+    "data": { "$ref": "resource.json" },
+    "included": {
+      "type": "array",
+      "items": {
+        "oneOf": [
+          { "$ref": "../director/resource.json" },
+          { "$ref": "../genre/resource.json" }
+        ]
+      }
+    },
+    "jsonapi": { "$ref": "../jsonapi.json" }
+  },
+  "required": [
+    "data"
+  ]
+}

@@ -1,0 +1,7 @@
+{
+  "type": "object",
+  "properties": {
+    "director": { "$ref": "../relationships.json" },
+    "genres": { "$ref": "../relationships.json" }
+  }
+}

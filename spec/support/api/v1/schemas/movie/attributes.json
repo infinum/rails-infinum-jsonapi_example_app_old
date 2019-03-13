@@ -1,0 +1,19 @@
+{
+  "type": "object",
+  "properties": {
+    "title": { "type": "string" },
+    "released_at": { "type": "string" },
+    "runtime": { "type": "integer" },
+    "storyline": { "type": "string" },
+    "budget": { "type": "integer" },
+    "content_rating": { "type": "string" }
+  },
+  "required": [
+    "title",
+    "released_at",
+    "runtime",
+    "storyline",
+    "budget",
+    "content_rating"
+  ]
+}
