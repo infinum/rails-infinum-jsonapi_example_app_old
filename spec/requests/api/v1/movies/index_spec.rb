@@ -1,6 +1,6 @@
 describe 'List movies' do
   include Docs::Api::V1::Movies::Api
-  let(:get_movies) { get 'api/v1/movies', params: params, headers: headers }
+  let(:get_movies) { get '/api/v1/movies', params: params, headers: headers }
   let(:user) { create(:user) }
   let(:params) { {} }
 

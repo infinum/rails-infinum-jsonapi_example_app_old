@@ -11,6 +11,6 @@ class MovieSerializer < BaseSerializer
     object.content_rating.to_sym
   end
 
-  belongs_to :director, record_type: :directors
+  belongs_to :director, record_type: :directors, serializer: DirectorSerializer
   has_many :genres, record_type: :genres, serializer: GenreSerializer
 end

@@ -9,7 +9,7 @@ describe 'Login' do
     }
   end
   let(:params) { json_api_params(session_attributes) }
-  let(:login) { post 'api/v1/sessions', params: params, headers: default_headers }
+  let(:login) { post '/api/v1/sessions', params: params, headers: default_headers }
 
   context 'when login is valid' do
     include Docs::Api::V1::Sessions::Create

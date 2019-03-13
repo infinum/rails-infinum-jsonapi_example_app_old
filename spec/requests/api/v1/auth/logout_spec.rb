@@ -5,7 +5,7 @@ describe 'Logout' do
   context 'When login is valid for an existing user' do
     include Docs::Api::V1::Sessions::Delete
 
-    let(:logout_user) { delete 'api/v1/sessions', headers: authenticated_headers(user) }
+    let(:logout_user) { delete '/api/v1/sessions', headers: authenticated_headers(user) }
 
     it 'returns 204 status' do
       logout_user
@@ -20,7 +20,7 @@ describe 'Logout' do
   context 'When user not logged in' do
     include Docs::Api::V1::Sessions::Delete
 
-    before { delete 'api/v1/sessions', headers: default_headers }
+    before { delete '/api/v1/sessions', headers: default_headers }
 
     it 'returns 401 status when user not logged in', :dox do
       expect(response).to have_http_status(:unauthorized)
