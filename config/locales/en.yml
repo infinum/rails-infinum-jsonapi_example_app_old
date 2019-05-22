@@ -1,5 +1,4 @@
 en:
-  media_type_error: Invalid request media type. Are you using JSONAPI standard?
   json_api:
     errors:
       not_found:

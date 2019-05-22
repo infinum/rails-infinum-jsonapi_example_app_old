@@ -85,7 +85,7 @@ describe 'List movies' do
 
   context 'when application/json content-type sent' do
     include Docs::Api::V1::Movies::Index
-    let(:headers) { { 'content-type' => 'application/json', 'accept' => 'application/json' } }
+    let(:headers) { { 'content-type' => 'application/json' } }
 
     it 'returns 406 when bad content-type sent', :dox do
       get_movies

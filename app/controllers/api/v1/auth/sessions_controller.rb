@@ -27,7 +27,7 @@ module Api
         end
 
         def session_params
-          deserialized_resource(:session).permit(:email, :password)
+          params.from_jsonapi.require(:session).permit(:email, :password)
         end
 
         def jti_claim

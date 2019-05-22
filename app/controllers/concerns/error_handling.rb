@@ -18,8 +18,8 @@ module ErrorHandling
       respond_with_error(404, 'Record not found')
     end
 
-    rescue_from JsonApi::Request::MediaTypeError do |error|
-      respond_with_error 406, error.message
+    rescue_from JsonApi::Request::MediaTypeError do
+      respond_with_error(406, 'Invalid request media type. Are you using JSONAPI standard?')
     end
   end
 end

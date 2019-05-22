@@ -2,7 +2,7 @@ module Api
   module V1
     class MoviesController < ApiController
       def index
-        render_jsonapi query_jsonapi.all
+        render_jsonapi(query_jsonapi.all)
       end
 
       private

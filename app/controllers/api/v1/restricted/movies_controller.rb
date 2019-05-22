@@ -3,11 +3,11 @@ module Api
     module Restricted
       class MoviesController < AuthenticatedController
         def create
-          movie = query_jsonapi.scope.new(movie_params)
+          movie = Movie.new(movie_params)
           authorize movie
           movie.save
 
-          render_jsonapi movie
+          render_jsonapi(movie)
         end
 
         private
@@ -17,7 +17,7 @@ module Api
         end
 
         def movie_params
-          deserialized_resource(:movie).permit(
+          params.from_jsonapi.require(:movie).permit(
             :title, :released_at, :runtime, :content_rating,
             :storyline, :budget, :director_id, genre_ids: []
           )
